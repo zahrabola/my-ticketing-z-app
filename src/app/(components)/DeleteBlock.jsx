@@ -1,9 +1,9 @@
-import React from 'react'
-
+import React from "react";
+import { FaX } from "react-icons/fa6";
 const DeleteBlock = () => {
   return (
-    <div>DeleteBlock</div>
-  )
-}
+    <div className="text-red-400 hover:cursor-pointer hover:text-red-200"><FaX /></div>
+  );
+};
 
-export default DeleteBlock
+export default DeleteBlock;
