@@ -1,9 +1,7 @@
 import React from 'react'
 
-const EditTicketForm = () => {
-  return (
-    <div>EditTicketForm</div>
-  )
-}
 
-export default EditTicketForm
+const EditTicketForm = () => {
+  return <div>Edit Form </div>
+}
+export default EditTicketForm;

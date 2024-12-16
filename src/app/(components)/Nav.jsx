@@ -14,7 +14,7 @@ const Nav = () => {
             <FaHome />
           </div>
         </Link>
-        <Link href="/">
+        <Link href="/TicketPage/new">
           <div className="icon">
             <FaTicket />
           </div>
