@@ -2,11 +2,14 @@ import Ticket from "../../(models)/ticket";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
+    ///console.log("POST RAN")
 
     try {
         const body = await req.json()
         const ticketData = body.formData
-        await TicketCard.create(ticketData)
+        await Ticket.create(ticketData)
+       // await TicketCard.create(ticketData)
+
 
         return NextResponse.json({message: "Ticket Created "}, {status: 201})
     } catch(error) {

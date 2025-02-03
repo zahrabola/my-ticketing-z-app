@@ -4,6 +4,10 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const TicketForm = () => {
+
+
+const router = useRouter();
+
   const handleChange = (event) => {
     const value = event.target.value;
     const name = event.target.name;
@@ -25,8 +29,21 @@ const TicketForm = () => {
 
   const [formData, setFormData] = useState(startingTicketData);
 
-  const handleSubmit = () => {
-    sonsole.log("submitted");
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const response = await fetch("/api/Tickets/", {
+      method: "POST",
+      body: JSON.stringify({formData}),
+      "content-type": "application/json"
+    })
+
+    if(!response.ok){
+      throw new Error("Failed to create Ticket")
+    }
+
+    router.refresh()
+    router.push("/")
+   // console.log("submitted");
   };
 
   return (
@@ -141,3 +158,4 @@ const TicketForm = () => {
 };
 
 export default TicketForm;
+///mongodb+srv://<db_username>:<db_password>@cluster0.rzprwd5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0 
