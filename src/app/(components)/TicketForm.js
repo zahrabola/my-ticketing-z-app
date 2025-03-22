@@ -28,12 +28,15 @@ const router = useRouter();
   };
 
   const [formData, setFormData] = useState(startingTicketData);
+  console.log(formData)
 
   const handleSubmit = async (event) => {
+    console.log("submitted")
     event.preventDefault();
     const response = await fetch("/api/Tickets/", {
       method: "POST",
-      body: JSON.stringify({formData}),
+    body: JSON.stringify({formData}),
+    /// body: JSON.stringify(formData),
       "content-type": "application/json"
     })
 
